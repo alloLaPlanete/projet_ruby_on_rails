@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20170628180136) do
     t.string   "nom"
     t.string   "motPasse"
     t.string   "role"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
