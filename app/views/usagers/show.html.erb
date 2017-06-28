@@ -1,0 +1,25 @@
+<h1><%= @usager.nom %></h1>
+
+<hr />
+<p>
+  <strong>Courriel:</strong>
+  <%= @usager.courriel %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @usager.nom %>
+</p>
+
+<p>
+  <strong>Motpasse:</strong>
+  <%= @usager.motPasse %>
+</p>
+
+<p>
+  <strong>Role:</strong>
+  <%= @usager.role %>
+</p>
+
+<%= link_to 'Edit', edit_usager_path(@usager) %> |
+<%= link_to 'Back', usagers_path %>
