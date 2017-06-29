@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
+  
   devise_for :deviseusers
+  
   scope "(:locale)", locale: /en|fr/ do 
-  root 'usagers#index'
-  resources :usagers
-end
+    root 'usagers#index'
+    
+    resources :usagers do 
+      get 'myLsitOfUsers'
+    end
+  
+  end
 
   #root'static_pages#home'
   get 'usagers/:nom' => 'usagers#show', as: :show_usager

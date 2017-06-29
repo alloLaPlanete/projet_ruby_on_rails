@@ -5,7 +5,14 @@
     <%= f.input :courriel %>
     <%= f.input :nom %>
     <%= f.input :motPasse %>
-    <%= f.input :role %>
+    
+    <% if @usager.role == 'Directeur'%>
+        <%= f.select(:role, options_for_select(['Directeur', ' Coordonateur', 'Adjoint Coordonateur', 'Intervenant'])) %>
+  
+    <% else %>
+        <%= f.select(:role, options_for_select([' Coordonateur', 'Adjoint Coordonateur', 'Intervenant'])) %>
+    <% end %>
+ 
   </div>
 
   <div class="form-actions">

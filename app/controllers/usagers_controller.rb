@@ -3,6 +3,7 @@ class UsagersController < ApplicationController
   
   before_action :set_usager, only: [:show, :edit, :update, :destroy]
 
+
   # GET /usagers
   # GET /usagers.json
   def index
@@ -12,11 +13,13 @@ class UsagersController < ApplicationController
   # GET /usagers/1
   # GET /usagers/1.json
   def show
+    
   end
 
   # GET /usagers/new
   def new
     @usager = Usager.new
+
   end
 
   # GET /usagers/1/edit
@@ -26,10 +29,11 @@ class UsagersController < ApplicationController
   # POST /usagers
   # POST /usagers.json
   def create
-    @usager = Usager.new(usager_params)
-
+    @usager = current_deviseuser.usagers.build(usager_params)   #Permet de referer l'id du createur
+   
     respond_to do |format|
       if @usager.save
+        
         format.html { redirect_to @usager, notice: 'Usager was successfully created.' }
         format.json { render :show, status: :created, location: @usager }
       else
@@ -62,6 +66,7 @@ class UsagersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
