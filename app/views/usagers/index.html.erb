@@ -1,4 +1,5 @@
-<h1><%= t('usagers.menu')%></h1>
+<h1>Voici votre liste d'usagers</h1>
+
 
 
 <hr />
@@ -26,11 +27,20 @@
         <td><%= link_to t('Edit'), edit_usager_path(usager),class: 'btn btn-mini btn-primary'  %></td>
         <td><%= link_to t('Destroy'), usager, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %></td>
       </tr>
-       <% end %>
+      
     <% end %>
+    <% end %>
+
   </tbody>
 </table>
 
 <br>
-
 <%= link_to 'Nouveau Usager', new_usager_path, class: 'btn btn-mini btn-primary' %>
+
+
+<% if current_deviseuser.role == "Coordonateur"%>
+<%= link_to 'Nouveau organisme referent', new_organisme_referent_path, class: 'btn btn-mini btn-primary' %>
+<% end %>
+
+<br>
+<%= link_to 'Retour page accueil', root_path %>

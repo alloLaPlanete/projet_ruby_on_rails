@@ -7,10 +7,12 @@
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
+    Role :</br>
     <%= f.select(:role, options_for_select(['Directeur', ' Coordonateur', 'Adjoint Coordonateur', 'Intervenant'])) %>
   </div>
 
   <div class="form-actions">
+    </br>
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>

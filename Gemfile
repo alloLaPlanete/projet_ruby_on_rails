@@ -7,7 +7,6 @@ gem 'devise'
 # mail-gun
 gem 'mailgun-ruby', '~>1.1.6'
 
-
 # Rails i18n
 gem 'rails-i18n'
 

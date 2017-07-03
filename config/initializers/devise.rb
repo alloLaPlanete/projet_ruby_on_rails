@@ -6,13 +6,13 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'ff65546e53e0a7c740204d81bf4b6be7a7de922974bcee303c867ae15d8c0abebac1bd87c4f1068a1d87196e8b2a39ef8c56a393d6bfc758e7a4e8f2dc53280b'
+  # config.secret_key = 'a1b5b4697a966746ea8b910682b2659789f8f29b4feb6cafa5a6c23ba6d76d3bc9f1128d09c7514a3db3bf2f554a3be59854702507e2085ae57b94e6a410017f'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'no_reply@example.com'
+  config.mailer_sender = 'test@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -34,7 +34,7 @@ Devise.setup do |config|
   # session. If you need permissions, you should implement that in a before filter.
   # You can also supply a hash where the value is a boolean determining whether
   # or not authentication should be aborted when the value is not present.
-  config.authentication_keys = [:email]
+  # config.authentication_keys = [:email]
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
@@ -108,7 +108,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '854e56a68ecbc0f665d8e00c22d5ce14533323703d0b8966cff9b4bda45230d00f372962f2db9831eaced6cb1ddee870afbdc46ab8f42718a91397a1efeb8734'
+  # config.pepper = '6f450cf8291c72ec024971fe10b4041c867488dbb5aa037e4661328bf406ce0f092584cb145418c9faa13b17cdf30806ffa7c80b2b1887515cf6bc3b85fd6326'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -173,7 +173,7 @@ Devise.setup do |config|
   # Defines which strategy will be used to lock an account.
   # :failed_attempts = Locks an account after a number of failed attempts to sign in.
   # :none            = No lock strategy. You should handle locking by yourself.
-  # config.lock_strategy = :failed_attempts
+  config.lock_strategy = :failed_attempts
 
   # Defines which key will be used when locking and unlocking an account
   # config.unlock_keys = [:email]
@@ -183,7 +183,7 @@ Devise.setup do |config|
   # :time  = Re-enables login after a certain amount of time (see :unlock_in below)
   # :both  = Enables both strategies
   # :none  = No unlock strategy. You should handle unlocking by yourself.
-  config.unlock_strategy = :both
+   config.unlock_strategy = :email
 
   # Number of authentication tries before locking an account if lock_strategy
   # is failed attempts.
@@ -193,12 +193,12 @@ Devise.setup do |config|
   # config.unlock_in = 1.hour
 
   # Warn on the last attempt before the account is locked.
-  # config.last_attempt_warning = true
+   config.last_attempt_warning = true
 
   # ==> Configuration for :recoverable
   #
   # Defines which key will be used when recovering the password for an account
-  config.reset_password_keys = [:email]
+  # config.reset_password_keys = [:email]
 
   # Time interval you can reset your password with a reset password key.
   # Don't put a too small interval or your users won't have the time to
@@ -227,7 +227,7 @@ Devise.setup do |config|
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).
-  #config.default_scope = :user
+  # config.default_scope = :user
 
   # Set this configuration to false if you want /users/sign_out to sign out
   # only the current scope. By default, Devise signs out all scopes.

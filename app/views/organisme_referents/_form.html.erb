@@ -1,0 +1,21 @@
+<%= simple_form_for(@organisme_referent) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nomOrganisme %>
+    <%= f.input :adresseNoCivique %>
+    <%= f.input :adresseRue %>
+    <%= f.input :adresseVille %>
+    <%= f.input :adresseProvince %>
+    <%= f.input :adresseEtat %>
+    <%= f.input :adresseCodePostal %>
+    <%= f.input :telephoneBureau %>
+    <%= f.input :adresseTelecopie %>
+    <%= f.input :courriel %>
+    <%= f.input :siteWeb %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -5,4 +5,7 @@ class Usager < ActiveRecord::Base
     validates :role, presence: true, length: { minimum: 5}
     
     belongs_to :deviseuser
+    
+    has_many :organisme_referent
+    
 end

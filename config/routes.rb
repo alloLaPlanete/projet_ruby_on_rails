@@ -1,9 +1,19 @@
 Rails.application.routes.draw do
+
+ 
+
+  resources :organismes
+  resources :organismes
+  resources :organismes
+  devise_for :deviseusers , controllers: { registrations: 'deviseusers/registrations' }
+  resources :deviseusers
+  resources :organisme_referents
   
-  devise_for :deviseusers
+  
   
   scope "(:locale)", locale: /en|fr/ do 
-    root 'usagers#index'
+    #root 'usagers#index'
+    root'static_pages#home'
     
     resources :usagers do 
       get 'myLsitOfUsers'
@@ -11,7 +21,10 @@ Rails.application.routes.draw do
   
   end
 
-  #root'static_pages#home'
+  
+  
+  
+  
   get 'usagers/:nom' => 'usagers#show', as: :show_usager
 
   # The priority is based upon order of creation: first created -> highest priority.

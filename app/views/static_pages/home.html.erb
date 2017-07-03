@@ -1,0 +1,13 @@
+<h1>Bonjour <%= current_deviseuser.email %> <br> et bienvenue sur 
+la page d'accueil!</h1>
+
+<br> <%= link_to "Ma liste des usagers", usagers_path %> <br>
+
+
+<% if current_deviseuser.role == "Directeur"%>
+    <%= link_to "Gestion des organismes" , organismes_path%>
+<% end %>
+
+<% if current_deviseuser.role == "Coordonateur"%>
+    <%= link_to "Ma liste des organismes referents" , organisme_referents_path%>
+<% end %>
